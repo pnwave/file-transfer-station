@@ -1,0 +1,47 @@
+{
+  "id": "file-drop",
+  "name": "文件中转站",
+  "description": "上传任意格式、任意大小的文件，支持下载和复制绝对路径。",
+  "version": "1.0.0",
+  "categories": [
+    "other"
+  ],
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "file_drop_list"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "rootDir": {
+        "type": "string",
+        "title": "存放目录",
+        "description": "上传文件存放的绝对目录。默认 $OPENCLAW_STATE_DIR/file-drop（通常是 ~/.openclaw/file-drop）。"
+      },
+      "chunkMb": {
+        "type": "number",
+        "title": "分片大小（MB）",
+        "description": "浏览器上传分片大小。网络慢时调小更稳。默认 16。",
+        "minimum": 1,
+        "maximum": 256
+      },
+      "maxFileGb": {
+        "type": "number",
+        "title": "单文件上限（GB）",
+        "description": "填 0 或留空表示不限制，只受磁盘空间约束。",
+        "minimum": 0
+      }
+    }
+  },
+  "controlUi": {
+    "entry": "dist/control-ui/c9a884da77807ff82f24f55f6d53bf88/index.js"
+  },
+  "reload": {
+    "turnHandover": true
+  }
+}

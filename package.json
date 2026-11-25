@@ -1,0 +1,40 @@
+{
+  "name": "openclaw-plugin-file-drop",
+  "version": "1.0.0",
+  "description": "上传任意格式、任意大小的文件，支持下载和复制绝对路径。文件中转站（File Drop）—— 原生 Control UI 页面。",
+  "type": "module",
+  "files": [
+    "index.js",
+    "src",
+    "scripts",
+    "dist",
+    "openclaw.plugin.json",
+    "tsconfig.json",
+    "README.md",
+    "assets"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.11.7"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "controlUi": "./dist/control-ui/c9a884da77807ff82f24f55f6d53bf88/index.js",
+    "build": {
+      "openclawVersion": "2026.11.7"
+    },
+    "compat": {
+      "pluginApi": ">=2026.11.7",
+      "minGatewayVersion": "2026.11.7"
+    }
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
